@@ -3,17 +3,18 @@ $(document).ready(function () {
 
     //Set current date in the Jumbotron class
     var cDate = $('#currentDay');
-
+    //Display the current date in the screen 
+    cDate.text(moment().format("dddd, MMMM Do YYYY"));
     //Saving event in the local storage 
     var events = JSON.parse(localStorage.getItem("events")) || [];
     var checkStorage = localStorage.getItem("events");
 
-    $(".saveBtn").on('click',function() {
-        $('.time-block').each(function() {
-        var term = $('.time-block').data('id');
-        alert(term);
+    $(".saveBtn").on('click', function () {
+        $('.time-block').each(function () {
+            var term = $('.time-block').data('id');
+            alert(term);
         });
-        
+
     });
     //Creating a row inside a loop
     for (var i = 0; i < 24; i++) {
@@ -27,7 +28,7 @@ $(document).ready(function () {
             localStorage.setItem('events', JSON.stringify(events));
 
         };
-        
+
 
         // Create Grid - Event
         var eventDescCol = $('<div class="description col-8">');
@@ -43,6 +44,5 @@ $(document).ready(function () {
         };
     };
 
-    //Display the current date in the screen
-  cDate.text(moment().format("dddd, MMMM Do YYYY"));
-});  
+});
+
