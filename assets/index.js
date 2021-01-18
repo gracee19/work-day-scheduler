@@ -11,39 +11,38 @@ $(document).ready(function () {
     $(".saveBtn").on('click',function() {
         $('.time-block').each(function() {
         var term = $('.time-block').data('id');
-        // alert(term);
-        console.log("hi");
+        alert(term);
         });
         
     });
-    // //Creating a row inside a loop
-    // for (var i = 0; i < 24; i++) {
+    //Creating a row inside a loop
+    for (var i = 0; i < 24; i++) {
 
 
 
-    //     // Check and apply local storage
-    //     if (checkStorage == null) {
+        // Check and apply local storage
+        if (checkStorage == null) {
 
-    //         events.push({ eventId: i });
-    //         localStorage.setItem('events', JSON.stringify(events));
+            events.push({ eventId: i });
+            localStorage.setItem('events', JSON.stringify(events));
 
-    //     };
+        };
         
 
-    //     // Create Grid - Event
-    //     var eventDescCol = $('<div class="description col-8">');
-    //     eventDescCol.attr('data-time', clockIn);
+        // Create Grid - Event
+        var eventDescCol = $('<div class="description col-8">');
+        eventDescCol.attr('data-time', clockIn);
 
-    //     // Set Timeframe Class
-    //     if (moment(clockIn).isBefore(now)) {
-    //         eventDescCol.addClass('past');
-    //     } else if (moment(clockIn).isSame(now)) {
-    //         eventDescCol.addClass('present');
-    //     } else if (moment(clockIn).isAfter(now)) {
-    //         eventDescCol.addClass('future');
-    //     };
-    // };
+        // Set Timeframe Class
+        if (moment(clockIn).isBefore(now)) {
+            eventDescCol.addClass('past');
+        } else if (moment(clockIn).isSame(now)) {
+            eventDescCol.addClass('present');
+        } else if (moment(clockIn).isAfter(now)) {
+            eventDescCol.addClass('future');
+        };
+    };
 
-    //Display the current date in the scree.
+    //Display the current date in the screen
   cDate.text(moment().format("dddd, MMMM Do YYYY"));
 });  
