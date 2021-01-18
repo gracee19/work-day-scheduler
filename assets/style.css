@@ -35,7 +35,7 @@ body {
     font-family: cursive;
   }
   
-  #description{
+  .description{
     white-space: pre-wrap;
     height: 50%;
     width: 100%;
